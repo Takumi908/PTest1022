@@ -21,8 +21,10 @@ namespace PTest1022 {
             //６以上…「６以上です」
 
             /*** ●●● ここへ解答を入力 ●●● ***/
-            
-
+            var list = new List<int> { };
+            list.Add(inputNum);
+           // list = list.Select(w => w >= 5) ? Console.WriteLine("5以下です"):Console.WriteLine("5以上です");
+            outStr += inputNum;
 
 
 
@@ -39,8 +41,7 @@ namespace PTest1022 {
             //※動作チェックする場合は「Exam_2_Stab()を使用すること」
 
             /*** ●●● ここへ解答を入力 ●●● ***/
-
-
+            data = Exam_2_Stab() ?? (-9999);
 
 
 
@@ -62,14 +63,14 @@ namespace PTest1022 {
             string title = "";
 
             //▼▼▼▼▼　以下のコメントを切り替えて確認をする 
-            Book book = new Book() { Title = "銀河鉄道の夜", Price = 411, Pages = 276 };
-            //Book book = new Book();
+            //Book book = new Book() { Title = "銀河鉄道の夜", Price = 411, Pages = 276 };
+            Book book = new Book();
             //▲▲▲▲▲
 
             //bookオブジェクトのタイトル名を出力せよ
             //bookオブジェクトがnullの場合はそのままnullを返却すること
             /*** ●●● ここへ解答を入力 ●●● ***/
-
+             title = book.Title ?? null; 
 
 
 
@@ -87,13 +88,12 @@ namespace PTest1022 {
 
             //金額が1200円以上の書籍を抽出せよ
             //出力については「タイトル」と「金額」を出力すること
-            
+
             /*** ●●● ここへ解答を入力 ●●● ***/
-
-
-
-
-
+        //    books.Where(w => w.Price >= 1200).FirstOrDefault(w => w.Title && w.Price);
+        //      foreach
+           
+  
             /*** ●●●●● ここまで ●●●●● ***/
             Console.WriteLine($"ページの合計は{ pageSum }ページです。");
         }
@@ -107,10 +107,10 @@ namespace PTest1022 {
             //出力については「タイトル」と「ページ数」を出力すること
 
             /*** ●●● ここへ解答を入力 ●●● ***/
-
-
-
-
+       //             books.Where(b=> books.Contains("物語")).
+            foreach (var item in books) {
+                Console.WriteLine($"{0}{1}", item.Title, item.Pages);
+            }
 
             /*** ●●●●● ここまで ●●●●● ***/
         }
